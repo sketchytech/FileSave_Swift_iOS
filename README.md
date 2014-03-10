@@ -1,7 +1,7 @@
 FileSave
 ========
 
-Simple method for iOS to save files to the Library and Documents Directories with optional subdirectories.
+Simple class for iOS to save files to the Library and Documents Directories with optional subdirectories.
 
 It's really easy to use, just import the FileSave.h file and then use the following class methods, likes so:
 
