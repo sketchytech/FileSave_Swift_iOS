@@ -12,3 +12,5 @@ It's really easy to us, just import the FileSave.h file and then use the followi
     NSData *fileData = // your data;
     [FileSave saveDataToDocumentsDirectory:fileData withName:@"Hello.json" andSubDirectory:@"hero"];
     [FileSave saveDataToLibraryDirectory:fileData withName:@"Hello.json" andSubDirectory:@"/help/me/world"];
+
+Notice that it doesn't matter whether you begin with a slash or not on the filename or directory name. 
