@@ -3,7 +3,7 @@ FileSave
 
 Simple method for iOS to save files to the Library and Documents Directories with optional subdirectories.
 
-It's really easy to us, just import the FileSave.h file and then use the following class methds, likes so:
+It's really easy to us, just import the FileSave.h file and then use the following class methods, likes so:
 
 
     [FileSave saveContentsOfStringToDocumentsDirectory:@"Hello World" withName:@"helloword.txt" andSubDirectory:nil];
