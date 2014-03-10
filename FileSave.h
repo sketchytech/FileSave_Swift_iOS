@@ -3,7 +3,7 @@
 //  TableView
 //
 //  Created by Anthony Levings on 10/03/2014.
-//  Copyright (c) 2014 Gylphi. All rights reserved.
+//  Copyright (c) 2014 Gylphi. All rights reserved. You are free to use this code but we'd grateful if you acknowledge the source when using the code or reproducing it.
 //
 
 #import <Foundation/Foundation.h>
