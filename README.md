@@ -14,3 +14,5 @@ It's really easy to use, just import the FileSave.h file and then use the follow
     [FileSave saveDataToLibraryDirectory:fileData withName:@"Hello.json" andSubDirectory:@"/help/me/world"];
 
 Notice that it doesn't matter whether you begin with a slash or not on the filename or directory name.
+
+See companion class: [FileDelete](https://github.com/sketchytech/FileDelete)
