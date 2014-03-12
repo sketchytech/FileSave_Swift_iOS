@@ -1,4 +1,3 @@
-
 //  FileSave.h
 //
 //  Created by Anthony Levings on 10/03/2014.
@@ -12,9 +11,15 @@
 #pragma mark - string methods
 +(BOOL)saveContentsOfStringToDocumentsDirectory:(NSString *)fileString withName:(NSString *)path andSubDirectory:(NSString *)subdirectory;
 +(BOOL)saveContentsOfStringToLibraryDirectory:(NSString *)fileString withName:(NSString *)path andSubDirectory:(NSString *)subdirectory;
++(BOOL)saveContentsOfStringToTemporaryDirectory:(NSString *)fileString withName:(NSString *)path andSubDirectory:(NSString *)subdirectory;
++(BOOL)saveContentsOfStringToCachesDirectory:(NSString *)fileString withName:(NSString *)path andSubDirectory:(NSString *)subdirectory;
++(BOOL)saveContentsOfStringToApplicationSupportDirectory:(NSString *)fileString withName:(NSString *)path andSubDirectory:(NSString *)subdirectory excludeFromBackUp:(BOOL)exclude;
 
 #pragma mark - data methods
 +(BOOL)saveDataToDocumentsDirectory:(NSData *)fileData withName:(NSString *)path andSubDirectory:(NSString *)subdirectory;
 +(BOOL)saveDataToLibraryDirectory:(NSData *)fileData withName:(NSString *)path andSubDirectory:(NSString *)subdirectory;
++(BOOL)saveDataToTemporaryDirectory:(NSData *)fileData withName:(NSString *)path andSubDirectory:(NSString *)subdirectory;
++(BOOL)saveDataToCachesDirectory:(NSData *)fileData withName:(NSString *)path andSubDirectory:(NSString *)subdirectory;
++(BOOL)saveDataToApplicationSupportDirectory:(NSData *)fileData withName:(NSString *)path andSubDirectory:(NSString *)subdirectory excludeFromBackup:(BOOL)exclude;
 
 @end
