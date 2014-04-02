@@ -309,34 +309,59 @@
 
 + (NSURL *)applicationDocumentsDirectory {
     
-    
-    return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory
-                                                   inDomains:NSUserDomainMask] lastObject];
+    NSString *documentsDirectory;
+NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+if ([paths count] > 0) {
+    documentsDirectory = [paths objectAtIndex:0];
+}
+
+    return documentsDirectory;
 }
 
 + (NSURL *)applicationLibraryDirectory {
+ NSString *libraryDirectory;
+NSArray *paths = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
+if ([paths count] > 0) {
+    libraryDirectory = [paths objectAtIndex:0];
+}   
     
-    
-    return [[[NSFileManager defaultManager] URLsForDirectory:NSLibraryDirectory
-                                                   inDomains:NSUserDomainMask] lastObject];
+    return libraryDirectory;
 }
 
 +(NSURL *)applicationSupportDirectory {
-    return [[[NSFileManager defaultManager] URLsForDirectory:NSApplicationSupportDirectory
-                                                   inDomains:NSUserDomainMask] lastObject];
-}
+ NSString *applicationSupportDirectory;
+NSArray *paths = NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES);
+if ([paths count] > 0) {
+    applicationSupportDirectory = [paths objectAtIndex:0];
+}   
+    
+    return applicationSupportDirectory;
+}   
+    
+    
+
 
 
 +(NSURL *)applicationTemporaryDirectory {
-    return [[[NSFileManager defaultManager] URLsForDirectory:NSApplicationSupportDirectory
-                                                   inDomains:NSUserDomainMask] lastObject];
+    
+   NSString *temporaryDirectory;
+NSArray *paths = NSSearchPathForDirectoriesInDomains(NSTemporaryDirectory, NSUserDomainMask, YES);
+if ([paths count] > 0) {
+    temporaryDirectory = [paths objectAtIndex:0];
+}   
+    
+    return temporaryDirectory; 
+    
 }
-
 +(NSURL *)applicationCachesDirectory {
-    return [[[NSFileManager defaultManager] URLsForDirectory:NSApplicationSupportDirectory
-                                                   inDomains:NSUserDomainMask] lastObject];
+    NSString *cachesDirectory;
+NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
+if ([paths count] > 0) {
+    cachesDirectory = [paths objectAtIndex:0];
+}   
+    
+    return cachesDirectory; 
 }
-
 #pragma mark - strip slashes
 
 +(NSString *)stripSlashIfNeeded:(NSString *)stringWithPossibleSlash {
