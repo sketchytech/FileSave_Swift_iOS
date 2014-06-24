@@ -315,7 +315,7 @@ if ([paths count] > 0) {
     documentsDirectory = [paths objectAtIndex:0];
 }
 
-    return documentsDirectory;
+    return [NSURL URLWithString:documentsDirectory];
 }
 
 + (NSURL *)applicationLibraryDirectory {
@@ -325,7 +325,7 @@ if ([paths count] > 0) {
     libraryDirectory = [paths objectAtIndex:0];
 }   
     
-    return libraryDirectory;
+    return [NSURL URLWithString:libraryDirectory];
 }
 
 +(NSURL *)applicationSupportDirectory {
@@ -335,7 +335,7 @@ if ([paths count] > 0) {
     applicationSupportDirectory = [paths objectAtIndex:0];
 }   
     
-    return applicationSupportDirectory;
+    return [NSURL URLWithString:applicationSupportDirectory];
 }   
     
     
@@ -344,13 +344,9 @@ if ([paths count] > 0) {
 
 +(NSURL *)applicationTemporaryDirectory {
     
-   NSString *temporaryDirectory;
-NSArray *paths = NSSearchPathForDirectoriesInDomains(NSTemporaryDirectory, NSUserDomainMask, YES);
-if ([paths count] > 0) {
-    temporaryDirectory = [paths objectAtIndex:0];
-}   
+    NSString *temporaryDirectory = NSTemporaryDirectory();
     
-    return temporaryDirectory; 
+    return [NSURL URLWithString:temporaryDirectory];
     
 }
 +(NSURL *)applicationCachesDirectory {
@@ -360,7 +356,7 @@ if ([paths count] > 0) {
     cachesDirectory = [paths objectAtIndex:0];
 }   
     
-    return cachesDirectory; 
+    return [NSURL URLWithString:cachesDirectory];
 }
 #pragma mark - strip slashes
 
