@@ -5,10 +5,10 @@ class FileSave {
     class func saveDataToDocumentsDirectory(fileData:NSData, path:String, subdirectory:String?) -> Bool
     {
     // Remove unnecessary slash if need
-    var newPath = FileSaver.stripSlashIfNeeded(path)
+    var newPath = self.stripSlashIfNeeded(path)
         var newSubdirectory:String?
         if subdirectory {
-        newSubdirectory = FileSaver.stripSlashIfNeeded(subdirectory!)
+        newSubdirectory = self.stripSlashIfNeeded(subdirectory!)
         }
     // Create generic beginning to file save path
     var savePath = self.applicationDocumentsDirectory().path+"/"
