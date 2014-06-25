@@ -1,3 +1,5 @@
+import Foundation
+
 class FileSave {
     
     class func saveDataToDocumentsDirectory(fileData:NSData, path:String, subdirectory:String?) -> Bool
