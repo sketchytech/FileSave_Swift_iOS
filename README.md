@@ -17,4 +17,18 @@ Notice that it doesn't matter whether you begin with a slash or not on the filen
 
 <b>Class methods also exist for saving to Caches, Temporary and Application Support directories.</b>
 
+##New Swift version, use following methods:
+
+    
+    FileSave.saveContentsOfStringToDocumentsDirectory("your string", path:"yourFileName.extension", subdirectory:"yourSubfolder")
+    FileSave.saveContentsOfStringToLibraryDirectory("your string", path:"yourFileName.extension", subdirectory:"yourSubfolder")
+    FileSave.saveContentsOfStringToTemporaryDirectory("your string", path:"yourFileName.extension", subdirectory:"yourSubfolder")
+    FileSave.saveContentsOfStringToCachesDirectory("your string", path:"yourFileName.extension", subdirectory:"yourSubfolder")
+    
+    // var data:NSData = // your data 
+    FileSave.saveDataToDocumentsDirectory(data, path: "yourFileName.extension", subdirectory: "yourSubfolder")
+    FileSave.saveDataToLibraryDirectory(data, path: "yourFileName.extension", subdirectory: "yourSubfolder")
+    FileSave.saveDataToTemporaryDirectory(data, path: "yourFileName.extension", subdirectory: "yourSubfolder")
+    FileSave.saveDataToCachesDirectory(data, path: "yourFileName.extension", subdirectory: "yourSubfolder")
+
 See companion class: [FileDelete](https://github.com/sketchytech/FileDelete)
