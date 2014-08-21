@@ -404,3 +404,4 @@ class func stripSlashIfNeeded(stringWithPossibleSlash:String) -> String {
     return success;
     }
 }
+
