@@ -7,13 +7,13 @@ class FileSave {
     // Remove unnecessary slash if need
     var newPath = self.stripSlashIfNeeded(path)
         var newSubdirectory:String?
-        if subdirectory {
+        if (subdirectory != nil) {
         newSubdirectory = self.stripSlashIfNeeded(subdirectory!)
         }
     // Create generic beginning to file save path
-    var savePath = self.applicationDocumentsDirectory().path+"/"
+    var savePath = self.applicationDocumentsDirectory().path!+"/"
     
-    if newSubdirectory {
+    if (newSubdirectory != nil) {
     savePath += newSubdirectory!
     self.createSubDirectory(savePath)
     savePath += "/"
@@ -37,14 +37,14 @@ class FileSave {
         // Remove unnecessary slash if need
         var newPath = self.stripSlashIfNeeded(path)
         var newSubdirectory:String?
-        if subdirectory {
-            newSubdirectory = FileSaver.stripSlashIfNeeded(subdirectory!)
+        if (subdirectory != nil) {
+            newSubdirectory = FileSave.stripSlashIfNeeded(subdirectory!)
         }
         
         // Create generic beginning to file save path
-        var savePath = self.applicationLibraryDirectory().path+"/"
+        var savePath = self.applicationLibraryDirectory().path!+"/"
         
-        if newSubdirectory {
+        if (newSubdirectory != nil) {
             savePath += subdirectory!
             self.createSubDirectory(savePath)
             savePath += "/"
@@ -65,14 +65,14 @@ class FileSave {
     // Remove unnecessary slash if need
     var newPath = self.stripSlashIfNeeded(path)
         var newSubdirectory:String?
-        if subdirectory {
-            newSubdirectory = FileSaver.stripSlashIfNeeded(subdirectory!)
+        if (subdirectory != nil) {
+            newSubdirectory = FileSave.stripSlashIfNeeded(subdirectory!)
         }
     
     // Create generic beginning to file save path
-    var savePath = self.applicationTemporaryDirectory().path+"/"
+    var savePath = self.applicationTemporaryDirectory().path!+"/"
     
-    if newSubdirectory {
+    if (newSubdirectory != nil) {
     savePath += newSubdirectory!
     self.createSubDirectory(savePath)
     savePath += "/"
@@ -94,14 +94,14 @@ class FileSave {
         // Remove unnecessary slash if need
         var newPath = self.stripSlashIfNeeded(path)
         var newSubdirectory:String?
-        if subdirectory {
-            newSubdirectory = FileSaver.stripSlashIfNeeded(subdirectory!)
+        if (subdirectory != nil) {
+            newSubdirectory = FileSave.stripSlashIfNeeded(subdirectory!)
         }
         
         // Create generic beginning to file save path
-        var savePath = self.applicationCachesDirectory().path+"/"
+        var savePath = self.applicationCachesDirectory().path!+"/"
         
-        if newSubdirectory {
+        if (newSubdirectory != nil) {
             savePath += newSubdirectory!
             self.createSubDirectory(savePath)
             savePath += "/"
@@ -122,14 +122,14 @@ class FileSave {
     // Remove unnecessary slash if need
     var newPath = self.stripSlashIfNeeded(path)
         var newSubdirectory:String?
-        if subdirectory {
-            newSubdirectory = FileSaver.stripSlashIfNeeded(subdirectory!)
+        if (newSubdirectory != nil) {
+            newSubdirectory = FileSave.stripSlashIfNeeded(subdirectory!)
         }
     
     // Create generic beginning to file save path
-    var savePath = self.applicationSupportDirectory().path+"/"
+    var savePath = self.applicationSupportDirectory().path!+"/"
     
-    if newSubdirectory {
+    if (newSubdirectory != nil) {
     savePath += newSubdirectory!
     self.createSubDirectory(savePath)
     savePath += "/"
@@ -146,7 +146,7 @@ class FileSave {
         NSURL.URLWithString(savePath).setResourceValue(true,forKey:NSURLIsExcludedFromBackupKey,
     error:&error)
         }
-        if error {
+        if (error != nil) {
          println(error);
         }
     
@@ -162,9 +162,9 @@ class FileSave {
         var newSubdirectory:String? = self.stripSlashIfNeeded(subdirectory)
     
     // Create generic beginning to file save path
-    var savePath = self.applicationDocumentsDirectory().path+"/"
+    var savePath = self.applicationDocumentsDirectory().path!+"/"
     
-    if newSubdirectory {
+    if (newSubdirectory != nil) {
     savePath += newSubdirectory!
     self.createSubDirectory(savePath)
     savePath += "/"
@@ -177,7 +177,7 @@ class FileSave {
     // Save the file and see if it was successful
         var ok:Bool = fileString.writeToFile(savePath, atomically:false, encoding:NSUTF8StringEncoding, error:&error)
     
-        if error {println(error)}
+        if (error != nil) {println(error)}
     
     // Return status of file save
     return ok;
@@ -189,9 +189,9 @@ class FileSave {
         var newSubdirectory:String? = self.stripSlashIfNeeded(subdirectory)
         
         // Create generic beginning to file save path
-        var savePath = self.applicationLibraryDirectory().path+"/"
+        var savePath = self.applicationLibraryDirectory().path!+"/"
         
-        if newSubdirectory {
+        if (newSubdirectory != nil) {
             savePath += subdirectory
             self.createSubDirectory(savePath)
             savePath += "/"
@@ -204,7 +204,7 @@ class FileSave {
         // Save the file and see if it was successful
         var ok:Bool = fileString.writeToFile(savePath, atomically:false, encoding:NSUTF8StringEncoding, error:&error)
         
-        if (error) {println(error)}
+        if (error != nil) {println(error)}
         
         // Return status of file save
         return ok;
@@ -216,9 +216,9 @@ class FileSave {
         var newSubdirectory:String? = self.stripSlashIfNeeded(subdirectory)
     
     // Create generic beginning to file save path
-    var savePath = self.applicationTemporaryDirectory().path+"/"
+    var savePath = self.applicationTemporaryDirectory().path!+"/"
     
-    if newSubdirectory {
+    if (newSubdirectory != nil) {
     savePath += newSubdirectory!
     self.createSubDirectory(savePath)
     savePath += "/"
@@ -231,7 +231,7 @@ class FileSave {
     // Save the file and see if it was successful
         var ok:Bool = fileString.writeToFile(savePath, atomically:false, encoding:NSUTF8StringEncoding, error:&error)
     
-    if error {
+    if (error != nil) {
         println(error)
         }
     
@@ -246,9 +246,9 @@ class FileSave {
         var newSubdirectory:String? = self.stripSlashIfNeeded(subdirectory)
     
     // Create generic beginning to file save path
-    var savePath = self.applicationCachesDirectory().path+"/"
+    var savePath = self.applicationCachesDirectory().path!+"/"
     
-    if newSubdirectory {
+    if (newSubdirectory != nil) {
     savePath += newSubdirectory!
     self.createSubDirectory(savePath)
     savePath += "/"
@@ -261,7 +261,7 @@ class FileSave {
     // Save the file and see if it was successful
         var ok:Bool = fileString.writeToFile(savePath, atomically:false, encoding:NSUTF8StringEncoding, error:&error)
     
-    if error {
+    if (error != nil) {
         println(error)
         }
     
@@ -278,9 +278,9 @@ class FileSave {
         var newSubdirectory:String? = self.stripSlashIfNeeded(subdirectory)
     
     // Create generic beginning to file save path
-    var savePath = self.applicationSupportDirectory().path+"/"
+    var savePath = self.applicationSupportDirectory().path!+"/"
     
-    if newSubdirectory {
+    if (newSubdirectory != nil) {
     savePath += newSubdirectory!
     self.createSubDirectory(savePath)
     savePath += "/"
@@ -293,7 +293,7 @@ class FileSave {
     // Save the file and see if it was successful
     var ok:Bool = fileString.writeToFile(savePath, atomically:false, encoding:NSUTF8StringEncoding, error:&error)
     
-    if error {println(error)}
+    if (error != nil) {println(error)}
     
     var errorExclude:NSError?
     
@@ -301,7 +301,7 @@ class FileSave {
         NSURL.URLWithString(savePath).setResourceValue(true, forKey:NSURLIsExcludedFromBackupKey,
     error:&error)
     }
-    if errorExclude {
+    if (errorExclude != nil) {
     println(errorExclude);
     }
     
@@ -318,36 +318,36 @@ class FileSave {
  class func applicationDocumentsDirectory() -> NSURL {
     
         var documentsDirectory:String?
-        var paths:AnyObject[] = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true);
+        var paths:[AnyObject] = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true);
     if paths.count > 0 {
         if let pathString = paths[0] as? NSString {
             documentsDirectory = pathString
         }
     }
     
-    return NSURL.URLWithString(documentsDirectory)
+    return NSURL.URLWithString(documentsDirectory!)
     }
     
    class func applicationLibraryDirectory() -> NSURL {
         var libraryDirectory:String?
-        var paths:AnyObject[] = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.LibraryDirectory, NSSearchPathDomainMask.UserDomainMask, true);
+        var paths:[AnyObject] = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.LibraryDirectory, NSSearchPathDomainMask.UserDomainMask, true);
         if paths.count > 0 {
             if let pathString = paths[0] as? NSString {
                 libraryDirectory = pathString
             }
         }
-    return NSURL.URLWithString(libraryDirectory)
+    return NSURL.URLWithString(libraryDirectory!)
     }
     
 class func applicationSupportDirectory() -> NSURL {
     var applicationSupportDirectory:String?
-    var paths:AnyObject[] = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.ApplicationSupportDirectory, NSSearchPathDomainMask.UserDomainMask, true);
+    var paths:[AnyObject] = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.ApplicationSupportDirectory, NSSearchPathDomainMask.UserDomainMask, true);
     if paths.count > 0 {
         if let pathString = paths[0] as? NSString {
             applicationSupportDirectory = pathString
         }
     }
-    return NSURL.URLWithString(applicationSupportDirectory)
+    return NSURL.URLWithString(applicationSupportDirectory!)
     }
     
     
@@ -358,7 +358,7 @@ class func applicationSupportDirectory() -> NSURL {
     
         var temporaryDirectory:String? = NSTemporaryDirectory();
     
-    return NSURL.URLWithString(temporaryDirectory)
+    return NSURL.URLWithString(temporaryDirectory!)
     
     }
     class func applicationCachesDirectory() -> NSURL {
@@ -372,7 +372,7 @@ class func applicationSupportDirectory() -> NSURL {
                 cachesDirectory = pathString
             }
         }
-    return NSURL.URLWithString(cachesDirectory);
+    return NSURL.URLWithString(cachesDirectory!);
     }
    //pragma mark - strip slashes
     
@@ -380,7 +380,7 @@ class func stripSlashIfNeeded(stringWithPossibleSlash:String) -> String {
     var stringWithoutSlash:String = stringWithPossibleSlash
     // If the file name contains a slash at the beginning then we remove so that we don't end up with two
     if stringWithPossibleSlash.hasPrefix("/") {
-    stringWithoutSlash = stringWithPossibleSlash.substringFromIndex(1)
+    stringWithoutSlash = stringWithPossibleSlash.substringFromIndex(advance(stringWithoutSlash.startIndex,1))
     }
     // Return the string with no slash at the beginning
     return stringWithoutSlash
@@ -392,14 +392,14 @@ class func stripSlashIfNeeded(stringWithPossibleSlash:String) -> String {
     var exists:Bool = NSFileManager.defaultManager().fileExistsAtPath(subdirectoryPath, isDirectory:&isDir)
     if (exists) {
     /* a file of the same name exists, we don't care about this so won't do anything */
-    if isDir==true {
+    if isDir {
     /* subdirectory already exists, don't create it again */
     return true;
     }
     }
     var success:Bool = NSFileManager.defaultManager().createDirectoryAtPath(subdirectoryPath, withIntermediateDirectories:true, attributes:nil, error:&error)
     
-    if error { println(error) }
+    if (error != nil) { println(error) }
     
     return success;
     }
