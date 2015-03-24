@@ -24,7 +24,7 @@ Notice that it doesn't matter whether you begin with a slash or not on the filen
     
     
     var data:NSData = // your data 
-    FileSave.saveDataToDocumentsDirectory(data, directory:NSSearchPathDirectory.DocumentDirectory, path: "yourFileName.extension", subdirectory: "yourSubfolder")
+    FileSave.saveData(data, directory:NSSearchPathDirectory.DocumentDirectory, path: "yourFileName.extension", subdirectory: "yourSubfolder")
     FileSave.saveDataToTemporaryDirectory(data, path: "yourFileName.extension", subdirectory: "yourSubfolder")
 
 The code has been updated for Swift 1.2, no additional updates will be made to Objective-C code and earlier versions of Swift are no longer supported.
