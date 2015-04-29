@@ -1,9 +1,9 @@
 import Foundation
 
 
-struct FileSave {
+public struct FileSave {
 
-    static func saveData(fileData:NSData, directory:NSSearchPathDirectory, path:String, subdirectory:String?) -> Bool
+    public static func saveData(fileData:NSData, directory:NSSearchPathDirectory, path:String, subdirectory:String?) -> Bool
     {
         // Remove unnecessary slash if need
         let newPath = self.stripSlashIfNeeded(path)
@@ -36,7 +36,7 @@ struct FileSave {
         
     }
     
-    static func saveDataToTemporaryDirectory(fileData:NSData, path:String, subdirectory:String?) -> Bool
+   public static func saveDataToTemporaryDirectory(fileData:NSData, path:String, subdirectory:String?) -> Bool
     {
         
         // Remove unnecessary slash if need
@@ -71,7 +71,7 @@ struct FileSave {
     
     // string methods
     
-   static func saveString(fileString:String, directory:NSSearchPathDirectory, path:String, subdirectory:String) -> Bool {
+  public static func saveString(fileString:String, directory:NSSearchPathDirectory, path:String, subdirectory:String) -> Bool {
         // Remove unnecessary slash if need
         var newPath = self.stripSlashIfNeeded(path)
         var newSubdirectory:String? = self.stripSlashIfNeeded(subdirectory)
@@ -102,7 +102,7 @@ struct FileSave {
         return ok
         
     }
-    static func saveStringToTemporaryDirectory(fileString:String, path:String, subdirectory:String) -> Bool {
+   public static func saveStringToTemporaryDirectory(fileString:String, path:String, subdirectory:String) -> Bool {
         
         var newPath = self.stripSlashIfNeeded(path)
         var newSubdirectory:String? = self.stripSlashIfNeeded(subdirectory)
@@ -142,7 +142,7 @@ struct FileSave {
     // private methods
     
     //directories
-    private static func applicationDirectory(directory:NSSearchPathDirectory) -> NSURL? {
+    public static func applicationDirectory(directory:NSSearchPathDirectory) -> NSURL? {
         
         var appDirectory:String?
         var paths:[AnyObject] = NSSearchPathForDirectoriesInDomains(directory, NSSearchPathDomainMask.UserDomainMask, true);
@@ -160,7 +160,7 @@ struct FileSave {
     
     
     
-    private static func applicationTemporaryDirectory() -> NSURL? {
+    public static func applicationTemporaryDirectory() -> NSURL? {
         
         if let tD = NSTemporaryDirectory() {
         return NSURL(string:tD)
