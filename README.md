@@ -3,6 +3,8 @@ FileSave
 
 Simple class for iOS to save files to the Library and Documents Directories with optional subdirectories.
 
+Note: If you are working with Swift, it is recommended that you use [SwiftFiles](https://github.com/sketchytech/SwiftFiles), which combines FileSave with FileDelete and FileLoad.
+
 ##New Swift version 1.2 (Xcode 6.3 Beta 4), use following methods:
     
     FileSave.saveString("your string", directory:NSSearchPathDirectory.DocumentDirectory, path:"yourFileName.extension", subdirectory:"yourSubfolder")
